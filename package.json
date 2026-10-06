@@ -1,0 +1,46 @@
+{
+  "name": "pi-title",
+  "version": "0.1.0",
+  "description": "Per-session title for pi: /title sets a short label stored in the session's own custom entry, shown at the right end of the statusline footer's first line",
+  "type": "module",
+  "license": "MIT",
+  "author": "pruge",
+  "keywords": [
+    "pi-package",
+    "pi-extension",
+    "pi",
+    "title",
+    "session"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pruge/pi-title"
+  },
+  "files": [
+    "extensions",
+    "src",
+    "skills",
+    "README.md",
+    "LICENSE"
+  ],
+  "pi": {
+    "extensions": [
+      "./extensions/pi-title.ts"
+    ],
+    "skills": [
+      "./skills"
+    ]
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*"
+  },
+  "peerDependenciesMeta": {
+    "@earendil-works/pi-coding-agent": {
+      "optional": true
+    }
+  },
+  "scripts": {
+    "check": "npx --yes esbuild extensions/*.ts src/**/*.ts --outdir=/tmp/pi-title-check --log-level=warning",
+    "test": "node src/session-title.test.mjs"
+  }
+}
